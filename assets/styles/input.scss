@@ -25,23 +25,31 @@
 :root {
     --color-white: rgb(255, 255, 255);
 
-    --color-nutrual-50: rgb(239, 239, 239);
-    --color-nutrual-100: rgb(206, 206, 206);
-    --color-nutrual-200: rgb(182, 182, 183);
-    --color-nutrual-300: rgb(148, 148, 150);
-    --color-nutrual-400: rgb(128, 128, 129);
-    --color-nutrual-500: rgb(96, 96, 98);
-    --color-nutrual-600: rgb(87, 87, 89);
-    --color-nutrual-700: rgb(68, 68, 70);
-    --color-nutrual-800: rgb(53, 53, 54);
-    --color-nutrual-900: rgb(40, 40, 41);
+    --color-gray-50: rgb(239, 239, 239);
+    --color-gray-100: rgb(206, 206, 206);
+    --color-gray-200: rgb(182, 182, 183);
+    --color-gray-300: rgb(148, 148, 150);
+    --color-gray-400: rgb(128, 128, 129);
+    --color-gray-500: rgb(96, 96, 98);
+    --color-gray-600: rgb(87, 87, 89);
+    --color-gray-700: rgb(68, 68, 70);
+    --color-gray-800: rgb(53, 53, 54);
+    --color-gray-900: rgb(40, 40, 41);
+}
+
+.text-rtl {
+    direction: rtl;
 }
 
 .c-form-page {
+    * {
+        box-sizing: border-box;
+    }
+
     .form-title {
         font-size: 20px;
         font-weight: 700;
-        color: var(--color-nutrual-700);
+        color: var(--color-gray-700);
         text-align: center;
         margin: 0rem;
     }
@@ -49,25 +57,42 @@
     .form-subtitle {
         font-size: 16px;
         font-weight: 700;
-        color: var(--color-nutrual-700);
+        color: var(--color-gray-700);
         text-align: center;
         margin: 1rem 0rem 0rem;
     }
 
     .c-form-tag {
         margin: 1rem 0rem 0rem;
+    }
+
+    .c-form-upper {
         border: 1px solid var(--color-gray-100);
+        border-radius: 0.5rem;
+        overflow: hidden;
     }
 
     .form-heading {
         margin: 0rem;
-        padding: 0.25rem 1rem;
+        padding: 0.5rem 1rem;
         text-align: center;
+        border-bottom: 1px solid var(--color-gray-100);
     }
 
     .upper-form-grid {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+    .column-1, .column-2 {
+        border-bottom: 1px solid var(--color-gray-100);
+        @media (min-width: 1024px) {
+            border-bottom: none;
+            border-right: 1px solid var(--color-gray-100);
+        }
     }
 
     .form-list {
@@ -77,13 +102,152 @@
         flex-direction: column;
     }
 
-    .form-list-row {
-        display: flex;
-        align-items: center;
+    .form-list-row-top {
+        display: grid;
+        grid-template-columns: auto 4rem 4rem;
+        border-bottom: 1px solid var(--color-gray-100);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &.c-header {
+            background-color: var(--color-gray-50);
+        }
+
+        &>* {
+            padding: 0.5rem;
+        }
     }
 
     .list-title {
-        flex: 1 1 0%;
-        
+         &>* {
+             font-size: 14px;
+             font-weight: 600;
+             color: var(--color-gray-700);
+         }
+    }
+
+    .list-w, .list-f {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-gray-700);
+        border-left: 1px solid var(--color-gray-100);
+    }
+
+    .upper-form-input {
+        border: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: var(--color-gray-700);
+        font-size: 14px;
+    }
+
+    .form-list-item {
+        .list-w, .list-f {
+            padding: 0rem;
+        }
+    }
+
+    .c-form-bottom {
+        margin: 1rem 0rem 0rem;
+        border: 1px solid var(--color-gray-100);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .bottom-form-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .more-space {
+            @media (min-width: 1024px) {
+                grid-column: span 2 / span 2;
+            }
+        }
+    }
+
+    .form-list-row-bottom {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-bottom: 1px solid var(--color-gray-100);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &>* {
+            padding: 0.5rem;
+        }
+
+        .list-title {
+            align-content: center;
+        }
+    }
+
+    .list-value {
+        grid-column: span 2 / span 2;
+    }
+
+    .extra-info-input {
+        width: 100%;
+        height: 2.5rem;
+    }
+
+    .complaint-info {
+        width: 100%;
+        height: 10rem;
+    }
+
+    .c-form-footer {
+        margin: 1rem 0rem 0rem;
+        background-color: #edf5ff;
+        border-radius: 1rem;
+        padding: 1rem;
+        color: var(--color-gray-600);
+    }
+
+    .footer-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0rem;
+        text-align: center;
+    }
+
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        margin: 1rem 0rem 0rem;
+    }
+
+    .f-contact-title {
+        margin: 0rem;
+    }
+
+    .f-c-phones {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .phone {
+        color: #2c89f3;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .website {
+        color: #2c89f3;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0.5rem auto;
     }
 }
