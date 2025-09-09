@@ -1,0 +1,16 @@
+{
+  "name": "dr-fori-panel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx sass assets/styles/input.scss dist/styles/main.css",
+    "build": "npx sass --style=compressed assets/styles/input.scss dist/styles/main.min.css",
+    "watch": "npx sass --watch assets/styles/input.scss dist/styles/main.css"
+  },
+  "author": "Mehran Mahmoudi",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.92.1"
+  }
+}

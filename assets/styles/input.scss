@@ -1,0 +1,89 @@
+@font-face {
+    font-family: YekanBakh;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./fonts/yekanbakh/regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakh;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("./fonts/yekanbakh/semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakh;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("./fonts/yekanbakh/bold.woff2") format("woff2");
+}
+
+:root {
+    --color-white: rgb(255, 255, 255);
+
+    --color-nutrual-50: rgb(239, 239, 239);
+    --color-nutrual-100: rgb(206, 206, 206);
+    --color-nutrual-200: rgb(182, 182, 183);
+    --color-nutrual-300: rgb(148, 148, 150);
+    --color-nutrual-400: rgb(128, 128, 129);
+    --color-nutrual-500: rgb(96, 96, 98);
+    --color-nutrual-600: rgb(87, 87, 89);
+    --color-nutrual-700: rgb(68, 68, 70);
+    --color-nutrual-800: rgb(53, 53, 54);
+    --color-nutrual-900: rgb(40, 40, 41);
+}
+
+.c-form-page {
+    .form-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-nutrual-700);
+        text-align: center;
+        margin: 0rem;
+    }
+
+    .form-subtitle {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-nutrual-700);
+        text-align: center;
+        margin: 1rem 0rem 0rem;
+    }
+
+    .c-form-tag {
+        margin: 1rem 0rem 0rem;
+        border: 1px solid var(--color-gray-100);
+    }
+
+    .form-heading {
+        margin: 0rem;
+        padding: 0.25rem 1rem;
+        text-align: center;
+    }
+
+    .upper-form-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .form-list {
+        padding: 0rem;
+        margin: 0rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-list-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .list-title {
+        flex: 1 1 0%;
+        
+    }
+}
